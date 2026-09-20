@@ -306,3 +306,16 @@ was actually opened and inspected.
 Use browser verification selectively.
 Do not use it for backend-only, data-only, documentation-only,
 or architecture-only tasks.
+
+## MCP / Browser Verification Rules
+
+When using Chrome DevTools MCP:
+
+1. Use browser inspection only when it materially verifies a requirement.
+2. Do not repeatedly attempt alternative ways to inspect the same fact.
+3. If a browser inspection method fails twice, stop that verification path.
+4. Do not loop on module-scope, Vite internals, import maps, or implementation details that are not exposed to the browser.
+5. Prefer verifying observable user behavior over internal module availability.
+6. If the application builds, tests pass, and the behavior is not directly observable through the browser, report the limitation and continue.
+7. Never repeat the same tool call or verification strategy more than twice without new evidence.
+8. Do not narrate repeated attempts. Make a decision and proceed.

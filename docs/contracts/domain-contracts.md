@@ -1,5 +1,16 @@
 # Digital Atlas Contracts
 
+## Geographic Data Source
+
+- **Source**: Natural Earth (110m cultural vectors, country boundaries)
+- **URL**: https://www.naturalearthdata.com/ (Repository: https://github.com/nvkelso/natural-earth-vector)
+- **License**: CC0-1.0 Universal
+- **Retrieved via**: `src/data/natural-earth.ts` loads GeoJSON at runtime from the verified URL
+- **Provenance constant**: `NATURAL_EARTH_PROVENANCE` in `src/data/natural-earth.ts`
+- **Data Year**: 2024
+- **Methodology**: Vector country boundaries, 110m resolution
+- **Limitations**: Boundaries may be simplified; may contain minor topological errors
+
 ## Domain Contracts
 
 - **Country**: `isoAlpha2`, `isoAlpha3`, `isoNumeric`, `name`, `officialName`
