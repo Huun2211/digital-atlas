@@ -286,3 +286,23 @@ At completion, provide a concise summary of:
 - verification performed
 - important decisions
 - remaining risks
+
+## Browser Verification
+
+When a task changes browser-visible behavior:
+
+1. Start the application using the repository's existing development command.
+2. Use the chrome-devtools MCP when available.
+3. Open the local application in Chrome.
+4. Verify the actual rendered UI.
+5. Check browser console and runtime errors.
+6. Exercise the important user interactions.
+7. If verification fails, diagnose and fix the implementation.
+8. Re-run browser verification after fixes.
+
+Do not claim browser verification was performed unless the application
+was actually opened and inspected.
+
+Use browser verification selectively.
+Do not use it for backend-only, data-only, documentation-only,
+or architecture-only tasks.
